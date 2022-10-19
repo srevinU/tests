@@ -89,49 +89,49 @@ myDb.sync({ alter: true }).then(() => {
 
     Questionnaires.bulkCreate(
         [{
-            sys_id: 1,
+            sys_id: '1',
             subject: 'Subject 1',
         }, {
-            sys_id: 2,
+            sys_id: '2',
             subject: 'Subject 2',
         }, {
-            sys_id: 3,
+            sys_id: '3',
             subject: 'Subject 3',
         }]
     );
 
     News.bulkCreate(
         [{
-            sys_id: 1,
+            sys_id: '1',
             subject: 'subject 1'
         }, {
-            sys_id: 2,
+            sys_id: '2',
             subject: 'subject 2'
         }, {
-            sys_id: 3,
+            sys_id: '3',
             subject: 'subject 3'
         }]
     )
 
     Tags.bulkCreate(
         [{
-            sys_id: 1,
+            sys_id: '1',
             label: 'Label 1'
         }, {
-            sys_id: 2,
+            sys_id: '2',
             label: 'Label 2'
         }, {
-            sys_id: 3,
+            sys_id: '3',
             label: 'Label 3'
         }]
     )
 
-    return News.findOne({ where: { sys_id: 1 } });
+    return News.findOne({ where: { sys_id: '1' } });
 
 })
 .then((data) => {
     news = data;
-    return Tags.findOne({where: { id: 2 }})
+    return Tags.findOne({where: { sys_id: '2' }})
 })
 .then((data) => {
     tag=data;
